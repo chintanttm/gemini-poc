@@ -1,0 +1,96 @@
+{
+    "name": "rappasoft/laravel-boilerplate",
+    "type": "project",
+    "description": "The Laravel Boilerplate Project.",
+    "keywords": [
+        "framework",
+        "laravel",
+        "boilerplate"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "arcanedev/log-viewer": "*",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "lab404/laravel-impersonate": "*",
+        "laravel/framework": "^11.0",
+        "laravel/socialite": "^5.0",
+        "laravel/tinker": "^2.5",
+        "laravel/ui": "*",
+        "spatie/laravel-activitylog": "*",
+        "spatie/laravel-permission": "^6.9",
+        "tabuna/breadcrumbs": "^4.1"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.2",
+        "barryvdh/laravel-ide-helper": "^3.1",
+        "brianium/paratest": "^6.2",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.0.1",
+        "mockery/mockery": "^1.4.2",
+        "phpunit/phpunit": "^9.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi",
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:meta"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "clear-all": [
+            "@php artisan clear-compiled",
+            "@php artisan cache:clear",
+            "@php artisan route:clear",
+            "@php artisan view:clear",
+            "@php artisan config:clear",
+            "composer dumpautoload -o"
+        ],
+        "cache-all": [
+            "@php artisan config:cache",
+            "@php artisan route:cache"
+        ],
+        "reset": [
+            "composer clear-all",
+            "composer cache-all"
+        ],
+        "test": "@php artisan test --parallel",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
