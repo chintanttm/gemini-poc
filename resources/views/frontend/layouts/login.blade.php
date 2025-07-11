@@ -49,6 +49,6 @@
             @endif
         </div>
         <!-- Modal: Setting -->
-        @include('frontend.includes.modal.settingsModal')
+        {{-- @include('frontend.includes.modal.settingsModal') --}}
     </body>
 </html>

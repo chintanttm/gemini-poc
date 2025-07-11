@@ -106,24 +106,4 @@ class ApplicationsController extends Controller
     {
         return view('backend.applications.app-blog-post');
     }
-
-    function chatAI(Request $request) {
-        $apiKey = "AIzaSyAjjVbqPD6nWvG68xemqC9dIcpg8xfadM0";
-        $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={$apiKey}";
-        $response = Http::withHeaders([
-            'Content-Type' => 'application/json'
-        ])->post($url, [
-            'contents' => [
-                [
-                    'parts' => [
-                        ['text' => 'How to work recaptcha']
-                    ]
-                ]
-            ]
-        ]);
-
-        return response()->json([
-            'response' => $response->json()
-        ]);
-    }
 }

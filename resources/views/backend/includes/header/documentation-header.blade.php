@@ -22,7 +22,6 @@
                                 <a class="small rounded py-1 px-2 m-1 fw-normal bg-primary text-white" href="#">Fitness Analytics</a>
                                 <a class="small rounded py-1 px-2 m-1 fw-normal bg-danger text-white" href="#">job Portal</a>
                                 <a class="small rounded py-1 px-2 m-1 fw-normal bg-secondary text-white" href="#">Cryptocurrency</a>
-                                <a class="small rounded py-1 px-2 m-1 fw-normal bg-success text-white" href="{{ route('admin.applications.app-calendar-tui') }}">Tui Calendar</a>
                                 <a class="small rounded py-1 px-2 m-1 fw-normal bg-warning text-white" href="{{ route('admin.applications.app-campaigns') }}">Campaigns</a>
                                 <a class="small rounded py-1 px-2 m-1 fw-normal bg-dark text-white" href="{{ route('admin.applications.app-blog') }}">Blog</a>
                                 <a class="small rounded py-1 px-2 m-1 fw-normal bg-info text-white" href="{{ route('admin.page.page-bookmark') }}">Bookmarks</a>

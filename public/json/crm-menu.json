@@ -1,136 +1,22 @@
 {
     "menu": [
         {
-            "name": "MAIN",
-            "sub_text": "Unique dashboard designs",
-            "routerLink": "",
-            "identifier": "",
-            "iconClass": "",
-            "isLable": true,
-            "children": []
-        },
-        {
-            "name": "My Dashboard",
+            "name": "Chat",
             "sub_text": "",
-            "routerLink": "admin.crm.crm-management",
-            "identifier": "dashboard",
-            "iconClass": "<svg xmlns='http://www.w3.org/2000/svg' width='18' fill='currentColor' viewBox='0 0 16 16'><path fill-rule='evenodd' d='m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z'/><path class='fill-secondary' fill-rule='evenodd' d='M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z'/></svg>",
+            "routerLink": "admin.crm.applications.app-chat",
+            "identifier": "chat",
+            "iconClass": "<svg xmlns='http://www.w3.org/2000/svg' width='18' fill='currentColor' viewBox='0 0 16 16'><path d='M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z'/><path class='fill-secondary' d='M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z'/></svg>",
             "isLable": false,
             "children": []
         },
         {
-            "name": "Applications",
+            "name": "Image Generate",
             "sub_text": "",
-            "routerLink": "admin.crm.applications.*",
-            "identifier": "applications",
-            "iconClass": " <svg xmlns='http://www.w3.org/2000/svg' width='18' fill='currentColor' viewBox='0 0 16 16'><path d='M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z'/><path class='fill-secondary' d='M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z'/></svg>",
+            "routerLink": "admin.crm.applications.app-chat",
+            "identifier": "imagegenerate",
+            "iconClass": "<svg xmlns='http://www.w3.org/2000/svg' width='18' fill='currentColor' viewBox='0 0 16 16'><path d='M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z'/><path class='fill-secondary' d='M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z'/></svg>",
             "isLable": false,
-            "children": [
-                {
-                    "name": "Calendar",
-                    "routerLink": "admin.crm.applications.app-calendar",
-                    "identifier": "app-calendar",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                },
-                {
-                    "name": "tui Calendar",
-                    "routerLink": "admin.crm.applications.app-calendar-tui",
-                    "identifier": "app-calendar-tui",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                },
-                {
-                    "name": "Email App",
-                    "routerLink": "admin.crm.applications.app-email",
-                    "identifier": "email",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                },
-                {
-                    "name": "Chat app",
-                    "routerLink": "admin.crm.applications.app-chat",
-                    "identifier": "chat",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                },
-                {
-                    "name": "Campaigns",
-                    "routerLink": "admin.crm.applications.app-campaigns",
-                    "identifier": "campaigns",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                },
-                {
-                    "name": "Social App",
-                    "routerLink": "admin.crm.applications.app-social",
-                    "identifier": "social",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                },
-                {
-                    "name": "File Manager",
-                    "routerLink": "admin.crm.applications.app-file-manager",
-                    "identifier": "file-manager",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                },
-                {
-                    "name": "Todo App",
-                    "routerLink": "admin.crm.applications.app-todo",
-                    "identifier": "todo",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                },
-                {
-                    "name": "Contacts",
-                    "routerLink": "admin.crm.applications.app-contacts",
-                    "identifier": "contacts",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                },
-                {
-                    "name": "Tasks",
-                    "routerLink": "admin.crm.applications.app-tasks",
-                    "identifier": "tasks",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                },
-                {
-                    "name": "Project List",
-                    "routerLink": "admin.crm.applications.app-project",
-                    "identifier": "project",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                },
-                {
-                    "name": "Kanban Board",
-                    "routerLink": "admin.crm.applications.app-jkanban",
-                    "identifier": "jkanban",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                },
-                {
-                    "name": "Blog",
-                    "routerLink": "admin.crm.applications.app-blog",
-                    "identifier": "blog",
-                    "iconClass": "",
-                    "isLable": false,
-                    "children": []
-                }
-            ]
+            "children": []
         }
     ],
     "resourcemenu": [
@@ -143,7 +29,6 @@
             "isLable": true,
             "children": []
         },
-
         {
             "name": "Authentication",
             "sub_text": "",
@@ -362,13 +247,7 @@
         {
             "name": "Personal",
             "children": [
-                {
-                    "name": "tui Calendar",
-                    "routerLink": "admin.applications.app-calendar-tui",
-                    "isNeededAjaxFunction":false,
-                    "ajaxCallKey":"",
-                    "ajaxCallValue":""
-                },
+               
                 {
                     "name": "Social App",
                     "routerLink": "admin.applications.app-social",

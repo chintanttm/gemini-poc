@@ -85,9 +85,9 @@
         @endif
 
         <!-- page sidebar -->
-        {{-- @if($setting['fullscreen_menu'] == 'N')
+        @if($setting['fullscreen_menu'] == 'N')
             @include('backend.includes.sidebar.sidebar')
-        @endif --}}
+        @endif
         
         <!-- body area -->
         <div class="wrapper">
@@ -121,7 +121,7 @@
         @endif
 
         <!-- main modal -->
-        @include('backend.includes.modal.main-modal')
+        {{-- @include('backend.includes.modal.main-modal') --}}
 
         <!-- Plugin Js -->
         

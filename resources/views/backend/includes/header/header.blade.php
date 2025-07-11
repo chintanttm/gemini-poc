@@ -361,7 +361,7 @@
                                     <a class="list-group-item list-group-item-action border-0" href="#"><i class="w30 fa fa-calendar"></i>My Events</a>
                                     <a class="list-group-item list-group-item-action border-0" href="{{ route('admin.account.account-billing') }}"><i class="w30 fa fa-credit-card"></i>Billing</a>
                                 </div>
-                                <a class="btn bg-secondary text-light text-uppercase rounded-0" href="{{ route('frontend.auth.logout') }}">
+                                <a class="btn bg-secondary text-light text-uppercase rounded-0" href="{{ route('admin.auth.logout') }}">
                                     Sign out
                                 </a> 
                             </div>

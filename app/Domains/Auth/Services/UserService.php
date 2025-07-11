@@ -56,6 +56,7 @@ class UserService extends BaseService
 
         try {
             $user = $this->createUser($data);
+            $user->assignRole(config('boilerplate.access.role.admin'));
         } catch (Exception $e) {
             DB::rollBack();
 

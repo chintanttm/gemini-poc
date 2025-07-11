@@ -13,9 +13,9 @@ class HomeController
     public function index()
     {
         if (auth()->check()) {
-            if (auth()->user()->can('view backend')) {
-                return redirect('admin/dashboard');
-            }
+     
+                return redirect('admin/applications/app-chat');
+     
         }
         return redirect('/login');
     }

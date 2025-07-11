@@ -45,6 +45,8 @@
             <div class="card shadow-sm w-100 p-4 p-md-5" style="max-width: 32rem;">
                 <!-- Form -->
                 <form class="row g-3" action="{{ route('frontend.auth.register') }}" method="post">
+                    @csrf
+                    @method('post')
                     <div class="col-12 text-center mb-5">
                         <h1>Create account</h1>
                         <span>Free access to our dashboard.</span>
@@ -52,22 +54,34 @@
                     <div class="col-12">
                         <label class="form-label">Full name</label>
                         <input type="text" name="name" id="name" class="form-control form-control-lg" placeholder="John" value="{{ old('name') }}" required>
+                        @error('name')
+                            <span>{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="col-12">
                         <label class="form-label">Email address</label>
                         <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="name@example.com">
+                        @error('email')
+                            <span>{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="col-12">
                         <label class="form-label">Password</label>
                         <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="8+ characters required">
+                        @error('password')
+                            <span>{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="col-12">
                         <label class="form-label">Confirm password</label>
                         <input type="password" name="password_confirmation" id="password_confirmation" class="form-control form-control-lg" placeholder="8+ characters required">
+                        @error('password_confirmation')
+                            <span>{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="col-12">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="1" name="terms" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
                                 I accept the <a href="#" title="" class="text-primary">Terms and Conditions</a>
                             </label>

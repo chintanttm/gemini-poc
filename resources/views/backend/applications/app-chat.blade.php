@@ -23,7 +23,7 @@
 }
 </style>
 <div class="d-flex flex-nowrap">
-    {{-- <div class="order-1">
+    <div class="order-1">
         <div class="c-list">
             <div class="input-group mb-2">
                 <input type="text" class="form-control mb-1" placeholder="Search...">
@@ -273,7 +273,7 @@
                 </ul>
             </div>
         </div>
-    </div> --}}
+    </div>
     <div class="order-2 flex-grow-1 custom_scroll">
         <div class="tab-content">
             
@@ -287,6 +287,16 @@
                             {{-- <small class="text-muted">Active</small> --}}
                         </div>
                     </a>
+                    <div class="dropdown">
+    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="chatDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+        <span id="dropdown-label">AI Chat</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="chatDropdownMenu">
+        <li><a class="dropdown-item" href="javascript:void(0);" onclick="setChatMode('ai_chat_model', 'AI Chat')">AI Chat</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0);" onclick="setChatMode('image_generate_model', 'AI Image Generate')">AI Image Generate</a></li>
+    </ul>
+</div>
+
                 </div>
                 <!-- Chat: body -->
                 <div class="chat-history custom_scroll">
@@ -356,7 +366,10 @@
                             <input type="file" class="form-control" name="file-input" id="chat-file-input">
                             <label for="chat-file-input" class="fa fa-paperclip"></label>
                         </div>
-                        <input type="text" class="form-control bg-transparent border-0" id="chat-prompt-input" placeholder="Enter text here...">
+                        <div>
+                            <i role="button" id="record" class="fa fa-microphone"></i>
+                        </div>
+                        <input type="text" class="form-control bg-transparent border-0" id="chat-prompt-input" value="" placeholder="Enter text here...">
                         <button class="btn bg-secondary text-light text-uppercase" type="submit" id="send-button"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                     </div>
                 </form>
@@ -403,13 +416,42 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
-
 <script>
+    var selectedAIModel = "ai_chat_model";
+    function setChatMode(mode, text) {
+        document.getElementById('dropdown-label').innerText = text;
+        selectedAIModel = mode;
+    }
+
+    const btn = document.getElementById('record');
+    const resultInput = document.getElementById('chat-prompt-input');
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.interimResults = false;
+    recognition.continuous = false;
+    recognition.lang = 'en-US';
+ 
+    record.addEventListener('mousedown', () => {
+        recognition.start();
+    });
+    
+    record.addEventListener('mouseup', () => {
+        recognition.stop();
+    });
+    
+    recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        resultInput.value = transcript;
+    };
+ 
+    recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+    };
     $('.chat-app .chatlist-toggle').on('click', function () {
         $('.chat-app .order-1').toggleClass('open');
     });
     let conversationContext = [];
-  $('#ai-chat-form').on('submit', async  function (e) {
+    $('#ai-chat-form').on('submit', async  function (e) {
         e.preventDefault();
         
         const inputText = $('#chat-prompt-input').val();
@@ -471,7 +513,15 @@
                 </li>`;
             $('#message-box').append(typingPlaceholder);    
             const apiKey = 'AIzaSyAjjVbqPD6nWvG68xemqC9dIcpg8xfadM0';
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+            var url = "";
+            var generationConfig = {};
+            if(selectedAIModel == 'ai_chat_model'){
+                generationConfig = {"responseModalities":["TEXT"]}
+                url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+            } else if(selectedAIModel == 'image_generate_model') {
+                url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-preview-image-generation:generateContent?key=${apiKey}`;
+                generationConfig = {"responseModalities":["TEXT","IMAGE"]}
+            }
             conversationContext.push({
                 role: "user",
                 parts: [parts]
@@ -481,23 +531,41 @@
                 method: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify({
-                        contents: conversationContext
+                        contents: conversationContext,
+                        generationConfig:generationConfig
                     }),
                 success: function (response) {
-                    var text = response?.candidates?.[0]?.content?.parts?.[0]?.text || 'No response.';
-                    conversationContext.push({
-                        role: "model",
-                        parts: [{ text: text }]
-                    });
-                    text = marked.parse(text);
-                    var receveMessage = $('<li class="mb-3 d-flex flex-row align-items-end">')
-                        .append(
-                            $('<div class="max-width-70">').append(
-                                $('<div class="card p-3">').append(
-                                    $('<div class="message">').html(text)
-                                )
+                     const parts = response?.candidates?.[0]?.content?.parts;
+                    let contentHtml = '';
+
+                    if (Array.isArray(parts) && parts.length > 0) {
+                        parts.forEach(part => {
+                            if ('text' in part) {
+                                contentHtml += marked.parse(part.text);
+                            } else if ('inlineData' in part && part.inlineData.mimeType.startsWith("image/")) {
+                                const base64Image = part.inlineData.data;
+                                contentHtml += `<img src="data:${part.inlineData.mimeType};base64,${base64Image}" 
+                                                alt="Generated Image" style="max-width: 100%; margin-top: 10px;" />`;
+                            } else {
+                                contentHtml += `<p>[Unknown content]</p>`;
+                            }
+                        });
+                        conversationContext.push({
+                            role: "model",
+                            parts: parts
+                        });
+
+                    } else {
+                        contentHtml = '<p>No valid response received.</p>';
+                    }
+                const receveMessage = $('<li class="mb-3 d-flex flex-row align-items-end">')
+                    .append(
+                        $('<div class="max-width-70">').append(
+                            $('<div class="card p-3">').append(
+                                $('<div class="message">').html(contentHtml)
                             )
-                        );
+                        )
+                    );
                     $(`#${typingId}`).html(receveMessage);
                         $('#send-button').prop('disabled', false);
 

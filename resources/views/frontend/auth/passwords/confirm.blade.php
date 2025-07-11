@@ -3,7 +3,7 @@
 @section('title', __('Please confirm your password before continuing.'))
 
 @section('content')
-    <div class="{{ $setting->container_fluid == 'Y' ? 'container-fluid' : 'container' }}">
+    <div class="container">
         <x-frontend.card>
             <x-slot name="header">
                 @lang('Please confirm your password before continuing.')

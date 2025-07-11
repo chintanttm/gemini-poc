@@ -83,15 +83,15 @@ class RegisterController
                     ->mixedCase() // Require upper and lower case letters
                     ->letters()   // Require at least one letter
                     ->numbers()   // Require at least one number
-                    ->symbols()   // Require at least one symbol
-                    ->uncompromised(), // Check if the password has been exposed in a data breach
+                    ->symbols(),   // Require at least one symbol
+                    // ->uncompromised(), // Check if the password has been exposed in a data breach
                 'max:100'
             ],
             'terms' => ['required', 'in:1'],
-            'g-recaptcha-response' => ['required_if:captcha_status,true', new Captcha],
+            // 'g-recaptcha-response' => ['required_if:captcha_status,true', new Captcha],
         ], [
             'terms.required' => __('You must accept the Terms & Conditions.'),
-            'g-recaptcha-response.required_if' => __('validation.required', ['attribute' => 'captcha']),
+            // 'g-recaptcha-response.required_if' => __('validation.required', ['attribute' => 'captcha']),
         ]);
     }
 
