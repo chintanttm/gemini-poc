@@ -23,258 +23,20 @@
 }
 </style>
 <div class="d-flex flex-nowrap">
-    <div class="order-1">
+    <div class="order-1 m-5">
         <div class="c-list">
-            <div class="input-group mb-2">
-                <input type="text" class="form-control mb-1" placeholder="Search...">
-            </div>
             <ul class="nav nav-tabs tab-page-toolbar rounded text-center mb-1" role="tablist">
-                <li class="flex-fill nav-item"><a class="nav-link border-0 active" data-bs-toggle="tab" href="#chat-recent" role="tab" aria-selected="true">Chat</a></li>
-                <li class="flex-fill nav-item"><a class="nav-link border-0" data-bs-toggle="tab" href="#chat-groups" role="tab" aria-selected="false">Groups</a></li>
-                <li class="flex-fill nav-item"><a class="nav-link border-0" data-bs-toggle="tab" href="#chat-contact" role="tab" aria-selected="false">Contact</a></li>
+                <li class="flex-fill nav-item" id="chatTab"><a class="nav-link border-0 active" href="#chat-recent" role="tab" aria-selected="true">Chat</a></li>
             </ul>
         </div>
         <div class="tab-content border-top custom_scroll">
             <div class="tab-pane fade show active" id="chat-recent" role="tabpanel">
-                <ul class="nav nav-tabs list-group list-group-custom list-group-flush mb-0" role="tablist">
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex" data-bs-toggle="tab" data-bs-target="#Chris_Fox" role="tab">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar1.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Chris Fox</span> <small class="msg-time">12:37 PM</small></h6>
-                                <span class="text-muted">changed an issue from "In Progress" to</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex" data-bs-toggle="tab" data-bs-target="#Robert_Hammer" role="tab">
-                            <div class="avatar rounded-circle no-thumbnail">RH</div>
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Robert Hammer</span> <small class="msg-time">10:45 AM</small></h6>
-                                <span class="text-muted">It is a long established fact that a reader will be distracted</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex" data-bs-toggle="tab" data-bs-target="#Orlando_Lentz" role="tab">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar3.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Orlando Lentz</span> <small class="msg-time">10:11 AM</small></h6>
-                                <span class="text-muted">There are many variations of passages</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex active" data-bs-toggle="tab" data-bs-target="#Barbara_Kelly" role="tab">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar4.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Barbara Kelly</span> <small class="msg-time">Sat</small></h6>
-                                <span class="text-muted">Contrary to popular belief</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex" data-bs-toggle="tab" data-bs-target="#Robert_Hammer" role="tab">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar5.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Robert Hammer</span> <small class="msg-time">Fri</small></h6>
-                                <span class="text-muted">making it over 2000 years old</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex" data-bs-toggle="tab" data-bs-target="#Orlando_Lentz" role="tab">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar6.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Orlando Lentz</span> <small class="msg-time">Fri</small></h6>
-                                <span class="text-muted">There are many variations of passages</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex" data-bs-toggle="tab" data-bs-target="#Rose_Rivera" role="tab">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar7.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Rose Rivera</span> <small class="msg-time">Thu</small></h6>
-                                <span class="text-muted">The generated Lorem Ipsum</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex" data-bs-toggle="tab" data-bs-target="#Chris_Fox" role="tab">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar1.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Chris Fox</span> <small class="msg-time">Wed</small></h6>
-                                <span class="text-muted">changed an issue from "In Progress" to</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex" data-bs-toggle="tab" data-bs-target="#Robert_Hammer" role="tab">
-                            <div class="avatar rounded-circle no-thumbnail">RH</div>
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Robert Hammer</span> <small class="msg-time">Wed</small></h6>
-                                <span class="text-muted">It is a long established fact that a reader will be distracted</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex" data-bs-toggle="tab" data-bs-target="#Orlando_Lentz" role="tab">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar3.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Orlando Lentz</span> <small class="msg-time">13/10/2020</small></h6>
-                                <span class="text-muted">There are many variations of passages</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex" data-bs-toggle="tab" data-bs-target="#Barbara_Kelly" role="tab">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar4.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Barbara Kelly</span> <small class="msg-time">13/10/2020</small></h6>
-                                <span class="text-muted">Contrary to popular belief</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex" data-bs-toggle="tab" data-bs-target="#Robert_Hammer" role="tab">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar5.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Robert Hammer</span> <small class="msg-time">22/10/2020</small></h6>
-                                <span class="text-muted">making it over 2000 years old</span>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="tab-pane fade" id="chat-groups" role="tabpanel">
-                <ul class="list-unstyled list-group list-group-custom list-group-flush mb-0">
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex">
-                            <div class="avatar rounded-circle no-thumbnail">GI</div>
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Design UI</span> <small class="msg-time">9/10/2020</small></h6>
-                                <span class="text-muted">The point of using Lorem Ipsum</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex">
-                            <div class="avatar rounded-circle no-thumbnail">AD</div>
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Angular Dev Team</span> <small class="msg-time">22/8/2020</small></h6>
-                                <span class="text-muted">If you are going to use a passage</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex">
-                            <div class="avatar rounded-circle no-thumbnail">AT</div>
-                            <div class="flex-fill ms-3 text-truncate">
-                                <h6 class="d-flex justify-content-between mb-0"><span>Account Team</span> <small class="msg-time">11/7/2020</small></h6>
-                                <span class="text-muted">The point of using Lorem Ipsum</span>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="tab-pane fade" id="chat-contact" role="tabpanel">
-                <ul class="list-unstyled list-group list-group-custom list-group-flush mb-0">
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar2.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <div class="d-flex justify-content-between mb-0">
-                                    <h6 class="mb-0">Chris Fox</h6>
-                                    <div class="text-muted">
-                                        <i class="fa fa-heart ps-2"></i>
-                                        <i class="fa fa-trash ps-2"></i>
-                                    </div>
-                                </div>
-                                <span class="text-muted">chris.fox@LUNO.com</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar1.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <div class="d-flex justify-content-between mb-0">
-                                    <h6 class="mb-0">Barbara Kelly</h6>
-                                    <div class="text-muted">
-                                        <i class="fa fa-heart-o ps-2"></i>
-                                        <i class="fa fa-trash ps-2"></i>
-                                    </div>
-                                </div>
-                                <span class="text-muted">barbara.kelly@LUNO.com</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar10.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <div class="d-flex justify-content-between mb-0">
-                                    <h6 class="mb-0">Brian Swader</h6>
-                                    <div class="text-muted">
-                                        <i class="fa fa-heart-o ps-2"></i>
-                                        <i class="fa fa-trash ps-2"></i>
-                                    </div>
-                                </div>
-                                <span class="text-muted">brian.swader@LUNO.com</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar7.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <div class="d-flex justify-content-between mb-0">
-                                    <h6 class="mb-0">Richard Foos</h6>
-                                    <div class="text-muted">
-                                        <i class="fa fa-heart ps-2"></i>
-                                        <i class="fa fa-trash ps-2"></i>
-                                    </div>
-                                </div>
-                                <span class="text-muted">richard.foos@LUNO.com</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar4.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <div class="d-flex justify-content-between mb-0">
-                                    <h6 class="mb-0">Frank Camly</h6>
-                                    <div class="text-muted">
-                                        <i class="fa fa-heart-o ps-2"></i>
-                                        <i class="fa fa-trash ps-2"></i>
-                                    </div>
-                                </div>
-                                <span class="text-muted">frank.camly@LUNO.com</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="javascript:void(0);" class="d-flex">
-                            <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar6.jpg" alt="">
-                            <div class="flex-fill ms-3 text-truncate">
-                                <div class="d-flex justify-content-between mb-0">
-                                    <h6 class="mb-0">Brian Swader</h6>
-                                    <div class="text-muted">
-                                        <i class="fa fa-heart-o ps-2"></i>
-                                        <i class="fa fa-trash ps-2"></i>
-                                    </div>
-                                </div>
-                                <span class="text-muted">brianswader@LUNO.com</span>
-                            </div>
-                        </a>
-                    </li>
+                <ul class="nav nav-tabs list-group list-group-custom list-group-flush mb-0" role="tablist" id="chat-history">
                 </ul>
             </div>
         </div>
     </div>
-    <div class="order-2 flex-grow-1 custom_scroll">
+    <div class="order-2 flex-grow-1 m-5 bg-white" >
         <div class="tab-content">
             
             <div class="tab-pane fade show active" id="Barbara_Kelly" role="tabpanel">
@@ -283,20 +45,9 @@
                     <a class="d-flex" href="javascript:void(0);" title="">
                         <img class="avatar rounded-circle" src="{{ url('/') }}/assets/images/xs/avatar4.jpg" alt="avatar">
                         <div class="ms-3">
-                            <h6 class="mb-0">AI chat</h6>
-                            {{-- <small class="text-muted">Active</small> --}}
+                            <h6 class="mb-0">AI Chat</h6>
                         </div>
                     </a>
-                    <div class="dropdown">
-    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="chatDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
-        <span id="dropdown-label">AI Chat</span>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="chatDropdownMenu">
-        <li><a class="dropdown-item" href="javascript:void(0);" onclick="setChatMode('ai_chat_model', 'AI Chat')">AI Chat</a></li>
-        <li><a class="dropdown-item" href="javascript:void(0);" onclick="setChatMode('image_generate_model', 'AI Image Generate')">AI Image Generate</a></li>
-    </ul>
-</div>
-
                 </div>
                 <!-- Chat: body -->
                 <div class="chat-history custom_scroll">
@@ -310,47 +61,6 @@
                         </div>
                     </div>
                     <ul class="py-xl-3 py-2 px-xxl-5 px-lg-4 px-3 list-unstyled mb-0" id="message-box">
-                        <!-- Chat: left -->
-                        {{-- <li class="mb-3 d-flex flex-row align-items-end">
-                            <div class="max-width-70">
-                                <div class="user-info mb-1">
-                                    <img class="avatar xs rounded-circle me-1" src="{{ url('/') }}/assets/images/xs/avatar3.jpg" alt="avatar">
-                                    <span class="text-muted small">10:10 AM, Today</span>
-                                </div>
-                                <div class="card p-3">
-                                    <div class="message"> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div>
-                                </div>
-                            </div>
-                            <!-- More option -->
-                            <div class="dropdown morphing">
-                                <a href="#" class="nav-link py-2 px-3 text-muted" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu border-0 shadow">
-                                    <li><a class="dropdown-item" href="#">Edit</a></li>
-                                    <li><a class="dropdown-item" href="#">Share</a></li>
-                                    <li><a class="dropdown-item" href="#">Delete</a></li>
-                                </ul>
-                            </div>
-                        </li> --}}
-                        <!-- Chat: right -->
-                        {{-- <li class="mb-3 d-flex flex-row-reverse align-items-end">
-                            <div class="max-width-70 text-end">
-                                <div class="user-info mb-1">
-                                    <span class="text-muted small">10:12 AM, Today</span>
-                                </div>
-                                <div class="card border-0 p-3 bg-primary text-light">
-                                    <div class="message">Are we meeting today?</div>
-                                </div>
-                            </div>
-                            <!-- More option -->
-                            <div class="dropdown morphing">
-                                <a href="#" class="nav-link py-2 px-3 text-muted" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                <ul class="dropdown-menu border-0 shadow">
-                                    <li><a class="dropdown-item" href="#">Edit</a></li>
-                                    <li><a class="dropdown-item" href="#">Share</a></li>
-                                    <li><a class="dropdown-item" href="#">Delete</a></li>
-                                </ul>
-                            </div>
-                        </li> --}}
                     </ul>
                 </div>
                 <div style="text-align: center;" id="error-box">
@@ -377,52 +87,22 @@
         </div>
     </div>
 </div>
-<!-- Modal: Video call -->
-<div class="modal fade" id="video_call" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body position-relative">
-                <div class="card p-2 shadow mt-4 me-4 position-absolute top-0 end-0" style="z-index: 9999;">
-                    <img class="rounded-4" src="{{ url('/') }}/assets/images/profile_av.png" alt="" />
-                </div>
-                <div class="live-video" style="height: 100%; width: 100%; overflow: hidden;">
-                    <img class="img-fluid" src="{{ url('/') }}/assets/images/video-call.jpeg" alt="" />
-                </div>
-            </div>
-            <div class="modal-footer d-flex justify-content-between">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Info"><i class="fa fa-info-circle"></i></button>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Comments"><i class="fa fa-comments-o"></i></button>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add new user"><i class="fa fa-users"></i></button>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Record a message"><i class="fa fa-microphone"></i></button>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Record a video"><i class="fa fa-video-camera"></i></button>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Call End" data-bs-dismiss="modal"><i class="fa fa-phone"></i></button>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Screen Share"><i class="fa fa-desktop"></i></button>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Headphones"><i class="fa fa-headphones"></i></button>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Smile"><i class="fa fa-smile-o"></i></button>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="fa fa-pencil"></i></button>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Full Screen"><i class="fa fa-expand"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
 <script>
-    var selectedAIModel = "ai_chat_model";
-    function setChatMode(mode, text) {
-        document.getElementById('dropdown-label').innerText = text;
-        selectedAIModel = mode;
+    document.getElementById('chatTab').addEventListener('click', function () {
+  // Delay focus to let Bootstrap tab activate first (if using data-bs-toggle)
+    setTimeout(() => {
+            const input = document.getElementById('chat-prompt-input');
+            input.focus();
+            input.setSelectionRange(input.value.length, input.value.length); // move cursor to end
+        }, 100); // 100ms delay works well
+    });
+    function historyClick(el) {
+        const chatId = el.dataset.chatId;
+        const chatContainer = document.getElementById(chatId);
+        chatContainer.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest'  });
     }
-
     const btn = document.getElementById('record');
     const resultInput = document.getElementById('chat-prompt-input');
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -512,16 +192,10 @@
                     </div>
                 </li>`;
             $('#message-box').append(typingPlaceholder);    
-            const apiKey = 'AIzaSyAjjVbqPD6nWvG68xemqC9dIcpg8xfadM0';
+            const apiKey = "{{ env('GEMINI_API_KEY') }}";
             var url = "";
-            var generationConfig = {};
-            if(selectedAIModel == 'ai_chat_model'){
-                generationConfig = {"responseModalities":["TEXT"]}
-                url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-            } else if(selectedAIModel == 'image_generate_model') {
-                url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-preview-image-generation:generateContent?key=${apiKey}`;
-                generationConfig = {"responseModalities":["TEXT","IMAGE"]}
-            }
+            var generationConfig = {"responseModalities":["TEXT"]};
+            url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
             conversationContext.push({
                 role: "user",
                 parts: [parts]
@@ -537,11 +211,12 @@
                 success: function (response) {
                      const parts = response?.candidates?.[0]?.content?.parts;
                     let contentHtml = '';
-
+                    var historyModel = "";
                     if (Array.isArray(parts) && parts.length > 0) {
                         parts.forEach(part => {
                             if ('text' in part) {
                                 contentHtml += marked.parse(part.text);
+                                historyModel += part.text;
                             } else if ('inlineData' in part && part.inlineData.mimeType.startsWith("image/")) {
                                 const base64Image = part.inlineData.data;
                                 contentHtml += `<img src="data:${part.inlineData.mimeType};base64,${base64Image}" 
@@ -558,10 +233,18 @@
                     } else {
                         contentHtml = '<p>No valid response received.</p>';
                     }
+                    $('#chat-history').append(`<li class="list-group-item chat-item" onClick=historyClick(this) data-chat-id="histpry-${typingId}">
+                            <a href="javascript:void(0);" class="d-flex" data-bs-toggle="tab" data-bs-target="#Chris_Fox" role="tab">
+                                <div class="flex-fill ms-3 text-truncate">
+                                    <h6 class="d-flex justify-content-between mb-0"><span>`+inputText+`</span> <small class="msg-time">${getCurrentTimeWithAmPm()}</small></h6>
+                                    <span class="text-muted">`+historyModel+`</span>
+                                </div>
+                            </a>
+                        </li>`);
                 const receveMessage = $('<li class="mb-3 d-flex flex-row align-items-end">')
                     .append(
-                        $('<div class="max-width-70">').append(
-                            $('<div class="card p-3">').append(
+                        $(`<div class="max-width-70 chat-content" id="histpry-${typingId}">`).append(
+                            $('<div class="card p-3 bg-body-secondary">').append(
                                 $('<div class="message">').html(contentHtml)
                             )
                         )
@@ -597,6 +280,19 @@
             });
         }   
   });
+  function getCurrentTimeWithAmPm() {
+    const now = new Date();
+
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    hours = hours % 12;
+    hours = hours ? hours : 12; // convert 0 to 12
+
+    return `${hours}:${minutes}:${seconds} ${ampm}`;
+    }
   function showErrorMessage(msg) {
   $('#error-box').html(`
         <p class="text-danger">${msg}</p>
@@ -645,5 +341,9 @@ document.getElementById("chat-file-input").addEventListener("change", function (
     reader.readAsDataURL(file);
   }
 });
+
+
+
+
 </script>
 @endsection

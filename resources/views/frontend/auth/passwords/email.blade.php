@@ -45,6 +45,8 @@
             <div class="card shadow-sm w-100 p-4 p-md-5" style="max-width: 32rem;">
                 <!-- Form -->
                 <form class="row g-3" action="{{ route('frontend.auth.password.email') }}" method="post">
+                    @csrf
+                    @method('post')
                     <div class="col-12 text-center mb-5">
                         <img src="{{ url('/') }}/assets/images/auth-password-reset.svg" class="w240 mb-4" alt="" />
                         <h1>Forgot password?</h1>
@@ -54,6 +56,9 @@
                         <div class="mb-2">
                             <label class="form-label">Email address</label>
                             <input type="email" name="email" id="email" class="form-control form-control-lg" value="{{ old('email') }}" placeholder="name@example.com" required>
+                            @error('email')
+                                {{ $message }}
+                            @enderror
                         </div>
                     </div>
                     <div class="col-12 text-center mt-4">

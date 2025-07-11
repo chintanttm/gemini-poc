@@ -110,9 +110,9 @@
             </div>
 
             <!-- page footer -->
-            @if($bodyClasses['showFooter'])
+            {{-- @if($bodyClasses['showFooter']) --}}
                 @include('backend.includes.footer.footer')
-            @endif
+            {{-- @endif --}}
         </div>
 
         <!-- start: rightbar area -->

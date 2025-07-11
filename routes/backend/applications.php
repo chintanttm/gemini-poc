@@ -23,5 +23,12 @@ Route::group([
             ->push(__('Chat'), route('admin.'.$routePrefix.'.app-chat')
         ); 
     });
+    Route::get('app-image-generate', [ApplicationsController::class, 'ImageGenerateIndex'])
+        ->name($routePrefix.'.app-image-generate')
+        ->breadcrumbs(function (Trail $trail) use($routePrefix) {
+            $trail->parent('admin.'.$routePrefix.'.app')
+            ->push(__('Chat'), route('admin.'.$routePrefix.'.app-image-generate')
+        ); 
+    });
     Route::post('chat-ai', [ApplicationsController::class, 'chatAI'])->name('send-chat-api');
 });

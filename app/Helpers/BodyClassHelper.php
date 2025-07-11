@@ -12,7 +12,7 @@ class BodyClassHelper
     {
         $currentUrl = collect(Request::segments())->last();
         if($currentUrl != 'app-email' && $currentUrl != 'app-email-compose' && 
-        $currentUrl != 'app-email-detail' && $currentUrl != 'app-chat' &&
+        $currentUrl != 'app-email-detail' && $currentUrl != 'app-chat' && $currentUrl != 'app-image-generate' &&
         $currentUrl != 'app-social' && $currentUrl != 'app-file-manager' &&
         $currentUrl != 'app-tasks' && $currentUrl != 'app-project' && 
         $currentUrl != 'app-project-detail'){
@@ -27,6 +27,8 @@ class BodyClassHelper
             if($currentUrl == 'app-email' || $currentUrl == 'app-email-compose' || $currentUrl == 'app-email-detail'){
                 $bodyClasses = 'inbox';
             }else if($currentUrl == 'app-chat'){
+                $bodyClasses = 'chat-app';
+            }else if($currentUrl == 'app-image-generate'){
                 $bodyClasses = 'chat-app';
             }else if($currentUrl == 'app-social'){
                 $bodyClasses = 'body-layout-1 app-social';
